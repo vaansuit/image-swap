@@ -27,7 +27,7 @@ class HomePage extends StatefulWidget {
 String image = 'assets/invoker.jpg';
 
 void swapImage() {
-  if (image != 'assets/invoker.jpg') {
+  if (image == String) {
     image = 'assets/terror.jpg';
   } else if (image == 'assets/terror.jpg') {
     image = 'assets/invoker.jpg';
