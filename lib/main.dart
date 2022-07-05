@@ -1,5 +1,4 @@
 import 'dart:html';
-
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -27,9 +26,11 @@ class HomePage extends StatefulWidget {
 String image = 'assets/invoker.jpg';
 
 void swapImage() {
-  if (image == String) {
+  if (image == 'assets/invoker.jpg') {
     image = 'assets/terror.jpg';
   } else if (image == 'assets/terror.jpg') {
+    image = 'assets/anti-mage.jpg';
+  } else if (image == 'assets/anti-mage.jpg') {
     image = 'assets/invoker.jpg';
   }
 }
@@ -46,7 +47,11 @@ class _HomePageState extends State<HomePage> {
           Image.asset(image),
           const Text('\n'),
           ElevatedButton(
-              onPressed: swapImage, child: const Text('Press to change! '))
+              onPressed: () {
+                swapImage();
+                setState(() {}); //set state é o refresh da pagina
+              },
+              child: const Text('Press to change! '))
         ])));
   }
 }
